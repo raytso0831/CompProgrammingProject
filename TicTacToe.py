@@ -3,8 +3,10 @@
 #TicTacToe.py
 
 from ggame import *
+def mouseClick(event):
 
-white=Color(0xFFFFFF,1)
+
+    white=Color(0xFFFFFF,1)
 
 blackOutline=LineStyle(1, black)
 
@@ -19,16 +21,17 @@ whiteRectangle8=RectangleAsset(150,150,blackOutline,white)
 whiteRectangle9=RectangleAsset(150,150,blackOutline,white) 
 
 
-Sprite(whiteRectangle,(0,150))
-Sprite(whiteRectangle2)
-Sprite(whiteRectangle3),(0,150))
-Sprite(whiteRectangle4)
-Sprite(whiteRectangle5)
-Sprite(whiteRectangle6)
-Sprite(whiteRectangle7)
-Sprite(whiteRectangle8)
-Sprite(whiteRectangle9)
+Sprite(whiteRectangle,(0,0))
+Sprite(whiteRectangle2,(150,0))
+Sprite(whiteRectangle3,(300,0))
+Sprite(whiteRectangle4,(0,150))
+Sprite(whiteRectangle5,(150,150))
+Sprite(whiteRectangle6,(300,150))
+Sprite(whiteRectangle7,(0,300))
+Sprite(whiteRectangle8,(150,300))
+Sprite(whiteRectangle9,(300,300))
 
 
+App().listenMouseEvent('click',mouseClick)
 App().run()
 
