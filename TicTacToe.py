@@ -4,12 +4,22 @@
 
 from ggame import *
 def mouseClick(event):
+    print(event.x,event.y)
 
+if event.x>=150 and event.y>=150:
+    
 
-    white=Color(0xFFFFFF,1)
+'''def isEmpty (): 
+    if 'X' not in whiteRectangle or if 'O' not in whiteRectangle:
+        return True
+    else:
+        return False'''
+        
+        
+    
 
+white=Color(0xFFFFFF,1)
 blackOutline=LineStyle(1, black)
-
 whiteRectangle=RectangleAsset(150,150,blackOutline,white) 
 whiteRectangle2=RectangleAsset(150,150,blackOutline,white) 
 whiteRectangle3=RectangleAsset(150,150,blackOutline,white) 
