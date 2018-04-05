@@ -6,7 +6,8 @@ from ggame import *
 def mouseClick(event):
     print(event.x,event.y)
 
-if event.x>=150 and event.y>=150:
+    if event.x<=150 and event.y<=150:
+        print('X')
     
 
 '''def isEmpty (): 
