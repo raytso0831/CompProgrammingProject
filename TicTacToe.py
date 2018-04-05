@@ -7,23 +7,23 @@ def mouseClick(event):
     print(event.x,event.y)
 
     if event.x<=150 and event.y<=150:
-        print('X')
+        print('X' or 'O')
     elif event.x<=300 and event.y<=150:
-        print('X')
+        print('X'or 'O')
     elif event.x<=450 and event.y<=150:
-        print('X')
+        print('X' or'O')
     elif event.x<=150 and event.y<=300:
-        print('X')
+        print('X'or'O' )
     elif event.x<=300 and event.y<=300:
-        print('X')
+        print('X'or'O')
     elif event.x<=450 and event.y<=300:
-        print('X')
+        print('X'or'O')
     elif event.x<=150 and event.y<=450:
-        print('X')
+        print('X' or 'O')
     elif event.x<=300 and event.y<=450:
-        print('X')
+        print('X' or 'O')
     else:
-        print('X')
+        print('X'or 'O')
 
 '''def isEmpty (): 
     if 'X' not in whiteRectangle or if 'O' not in whiteRectangle:
