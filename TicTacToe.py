@@ -5,31 +5,49 @@
 from ggame import *
 def mouseClick(event):
     print(event.x,event.y)
+X=TextAsset('X',fill=white,style='bold 40pt Times')#
 
-    if event.x<=150 and event.y<=150:
-        print('X' or 'O')
-    elif event.x<=300 and event.y<=150:
-        print('X'or 'O')
-    elif event.x<=450 and event.y<=150:
-        print('X' or'O')
-    elif event.x<=150 and event.y<=300:
-        print('X'or'O' )
-    elif event.x<=300 and event.y<=300:
-        print('X'or'O')
-    elif event.x<=450 and event.y<=300:
-        print('X'or'O')
-    elif event.x<=150 and event.y<=450:
-        print('X' or 'O')
-    elif event.x<=300 and event.y<=450:
-        print('X' or 'O')
-    else:
-        print('X'or 'O')
+if event.x<=150 and event.y<=150:
+    Sprite(X)
+elif event.x<=300 and event.y<=150:
+    Sprite(X)
+elif event.x<=450 and event.y<=150:
+    Sprite(X)
+elif event.x<=150 and event.y<=300:
+    Sprite(X)
+elif event.x<=300 and event.y<=300:
+    Sprite(X)
+elif event.x<=450 and event.y<=300:
+    Sprite(X)
+elif event.x<=150 and event.y<=450:
+    Sprite(X)
+elif event.x<=300 and event.y<=450:
+    Sprite(X)
+else:
+    Sprite(X)
 
-'''def isEmpty (): 
-    if 'X' not in whiteRectangle or if 'O' not in whiteRectangle:
+def isEmpty (): 
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle:
         return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle2:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle3:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle4:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle5:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle6:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle7:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle8:
+        return True
+    if 'X' not in whiteRectangle or 'O' not in whiteRectangle9:
+        return True
+
     else:
-        return False'''
+        return False
         
         
     
