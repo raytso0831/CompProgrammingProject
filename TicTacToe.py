@@ -5,26 +5,28 @@
 from ggame import *
 def mouseClick(event):
     print(event.x,event.y)
-X=TextAsset('X',fill=white,style='bold 40pt Times')#
+    X=TextAsset('X',fill=black,style='bold 120pt Times')#
+    O=TextAsset('O',fill=black,style='bold 120pt Times')#
 
-if event.x<=150 and event.y<=150:
-    Sprite(X)
-elif event.x<=300 and event.y<=150:
-    Sprite(X)
-elif event.x<=450 and event.y<=150:
-    Sprite(X)
-elif event.x<=150 and event.y<=300:
-    Sprite(X)
-elif event.x<=300 and event.y<=300:
-    Sprite(X)
-elif event.x<=450 and event.y<=300:
-    Sprite(X)
-elif event.x<=150 and event.y<=450:
-    Sprite(X)
-elif event.x<=300 and event.y<=450:
-    Sprite(X)
-else:
-    Sprite(X)
+
+    if event.x<=150 and event.y<=150:
+        Sprite(X)
+    elif event.x<=300 and event.y<=150:
+        Sprite(X)
+    elif event.x<=450 and event.y<=150:
+        Sprite(X)
+    elif event.x<=150 and event.y<=300:
+        Sprite(X)
+    elif event.x<=300 and event.y<=300:
+        Sprite(X)
+    elif event.x<=450 and event.y<=300:
+        Sprite(X)
+    elif event.x<=150 and event.y<=450:
+        Sprite(X)
+    elif event.x<=300 and event.y<=450:
+        Sprite(X)
+    else:
+        Sprite(X)
 
 def isEmpty (): 
     if 'X' not in whiteRectangle or 'O' not in whiteRectangle:
@@ -53,6 +55,7 @@ def isEmpty ():
     
 
 white=Color(0xFFFFFF,1)
+black=Color(0x000000,1)
 blackOutline=LineStyle(1, black)
 whiteRectangle=RectangleAsset(150,150,blackOutline,white) 
 whiteRectangle2=RectangleAsset(150,150,blackOutline,white) 
