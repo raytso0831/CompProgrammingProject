@@ -51,9 +51,6 @@ def isEmpty ():
     else:
         return False
         
-        
-    
-
 white=Color(0xFFFFFF,1)
 black=Color(0x000000,1)
 blackOutline=LineStyle(1, black)
