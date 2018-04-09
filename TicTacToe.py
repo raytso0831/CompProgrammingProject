@@ -10,46 +10,41 @@ def mouseClick(event):
 
 
     if event.x<=150 and event.y<=150:
-        Sprite(X)
+        Sprite(X,(0,0))
     elif event.x<=300 and event.y<=150:
-        Sprite(X)
+        Sprite(X,(150,0))
     elif event.x<=450 and event.y<=150:
-        Sprite(X)
+        Sprite(X,(300,0))
     elif event.x<=150 and event.y<=300:
-        Sprite(X)
+        Sprite(X,(0,150))
     elif event.x<=300 and event.y<=300:
-        Sprite(X)
+        Sprite(X,(150,150))
     elif event.x<=450 and event.y<=300:
-        Sprite(X)
+        Sprite(X,(300,150))
     elif event.x<=150 and event.y<=450:
-        Sprite(X)
+        Sprite(X,(0,300))
     elif event.x<=300 and event.y<=450:
-        Sprite(X)
+        Sprite(X,(150,300))
     else:
-        Sprite(X)
+        Sprite(X,(300,300))
+'''
+def isEmpty ():
+    '''
 
-def isEmpty (): 
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle2:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle3:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle4:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle5:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle6:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle7:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle8:
-        return True
-    if 'X' not in whiteRectangle or 'O' not in whiteRectangle9:
-        return True
 
-    else:
-        return False
+if __name__ == '__main__':
+    square1=
+    square2=
+    square3=
+    square4=
+    square5=
+    square6=
+    square7=
+    square8=
+    square9=
+
+    
+
         
 white=Color(0xFFFFFF,1)
 black=Color(0x000000,1)
@@ -78,4 +73,3 @@ Sprite(whiteRectangle9,(300,300))
 
 App().listenMouseEvent('click',mouseClick)
 App().run()
-
