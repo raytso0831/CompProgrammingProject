@@ -56,39 +56,39 @@ def mouseClick(event):
 
 def isEmpty(comp_number):
     if comp_number == 1:
-        if data['square1'] == 'x' or data['square1'] == 'o':
+        if data['square1'] == X or data['square1'] == O:
             return False
         return True
     if comp_number == 2:
-        if data['square2'] == 'x' or data['square2'] == 'o':
+        if data['square2'] == X or data['square2'] == O:
             return False
         return True
     if comp_number == 3:
-        if data['square3'] == 'x' or data['square3'] == 'o':
+        if data['square3'] == X or data['square3'] == O:
             return False
         return True
     if comp_number == 4:
-        if data['square4'] == 'x' or data['square4'] == 'o':
+        if data['square4'] == X or data['square4'] == O:
             return False
         return True
     if comp_number == 5:
-        if data['square5'] == 'x' or data['square5'] == 'o':
+        if data['square5'] == X or data['square5'] == O:
             return False
         return True
     if comp_number == 6:
-        if data['square6'] == 'x' or data['square6'] == 'o':
+        if data['square6'] == X or data['square6'] == O:
             return False
         return True
     if comp_number == 7:
-        if data['square7'] == 'x' or data['square7'] == 'o':
+        if data['square7'] == X or data['square7'] == O:
             return False
         return True
     if comp_number == 8:
-        if data['square8'] == 'x' or data['square8'] == 'o':
+        if data['square8'] == X or data['square8'] == O:
             return False
         return True
     if comp_number == 9:
-        if data['square9'] == 'x' or data['square9'] == 'o':
+        if data['square9'] == X or data['square9'] == O:
             return False
         return True
     
