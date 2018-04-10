@@ -64,39 +64,39 @@ def Computerturn():
 
     
     if comp_num==1:
-        Sprite('O',(0,0))
+        Sprite(O,(0,0))
         data['square'] = O
 
     elif comp_num==2:
-        Sprite('O',(150,0))
+        Sprite(O,(150,0))
         data['square'] = O
 
     elif comp_num==3:
-        Sprite('O',(300,0))
+        Sprite(O,(300,0))
         data['square'] = O
 
     elif comp_num==4:
-        Sprite('O',(0,150))
+        Sprite(O,(0,150))
         data['square'] = O
 
     elif comp_num==5:
-        Sprite('O',(150,150))
+        Sprite(O,(150,150))
         data['square'] = O
 
     elif comp_num==6:
-        Sprite('O',(300,150))
+        Sprite(O,(300,150))
         data['square'] = O
 
     elif comp_num==7:
-        Sprite('O',(0,300))
+        Sprite(O,(0,300))
         data['square'] =O
 
     elif comp_num==8:
-        Sprite('O',(150,300))
+        Sprite(O,(150,300))
         data['square'] = O
 
     elif comp_num==9:
-        Sprite('O',(300,300))
+        Sprite(O,(300,300))
         data['square'] = O
 
 
