@@ -53,44 +53,10 @@ def mouseClick(event):
         data['square9'] = X
         Computerturn()
 
-
+'''
 def isEmpty ():
-    if data['square'] = X or data['square'] = O:
-        return False
-    return True
+'''
     
-    elif data['square2'] == X or data['square2'] == O:
-        return False
-    return True
-    
-    elif data['square3'] == X or data['square3'] == O:
-        return False
-    return True    
-    
-    elif data['square4'] == X or data['square4'] == O:
-        return False
-    return True
-        
-    el data['square5'] == X or data['square5'] == O:
-        return False
-    return True
-        
-    elif data['square6'] == X or data['square6'] == O:
-        return False
-    return True
-        
-    elif data['square7'] == X or data['square7'] == O:
-        return False
-    return True
-        
-    elif data['square8'] == X or data['square8'] === O:
-        return False
-    return True
-    
-    elif data['square9'] == X or data['square9'] == O:
-        return False
-    return True
-
 def Computerturn():
     from random import randint
     comp_num=randint(1,9)
