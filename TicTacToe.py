@@ -33,43 +33,47 @@ def isEmpty ():
 
 
 if __name__ == '__main__':
-    square1=
-    square2=
-    square3=
-    square4=
-    square5=
-    square6=
-    square7=
-    square8=
-    square9=
-
+    data = {}
+    data['square'] = ''
+    data['square2'] = ''
+    data['square3'] = ''
+    data['square4'] = ''
+    data['square5'] = ''
+    data['square6'] = ''
+    data['square7'] = ''
+    data['square8'] = ''
+    data['square9'] = ''
     
-
+   
         
-white=Color(0xFFFFFF,1)
-black=Color(0x000000,1)
-blackOutline=LineStyle(1, black)
-whiteRectangle=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle2=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle3=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle4=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle5=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle6=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle7=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle8=RectangleAsset(150,150,blackOutline,white) 
-whiteRectangle9=RectangleAsset(150,150,blackOutline,white) 
-
-
-Sprite(whiteRectangle,(0,0))
-Sprite(whiteRectangle2,(150,0))
-Sprite(whiteRectangle3,(300,0))
-Sprite(whiteRectangle4,(0,150))
-Sprite(whiteRectangle5,(150,150))
-Sprite(whiteRectangle6,(300,150))
-Sprite(whiteRectangle7,(0,300))
-Sprite(whiteRectangle8,(150,300))
-Sprite(whiteRectangle9,(300,300))
-
-
-App().listenMouseEvent('click',mouseClick)
-App().run()
+    
+        
+    
+            
+    white=Color(0xFFFFFF,1)
+    black=Color(0x000000,1)
+    blackOutline=LineStyle(1, black)
+    whiteRectangle=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle2=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle3=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle4=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle5=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle6=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle7=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle8=RectangleAsset(150,150,blackOutline,white) 
+    whiteRectangle9=RectangleAsset(150,150,blackOutline,white) 
+    
+    
+    Sprite(whiteRectangle,(0,0))
+    Sprite(whiteRectangle2,(150,0))
+    Sprite(whiteRectangle3,(300,0))
+    Sprite(whiteRectangle4,(0,150))
+    Sprite(whiteRectangle5,(150,150))
+    Sprite(whiteRectangle6,(300,150))
+    Sprite(whiteRectangle7,(0,300))
+    Sprite(whiteRectangle8,(150,300))
+    Sprite(whiteRectangle9,(300,300))
+    
+    
+    App().listenMouseEvent('click',mouseClick)
+    App().run()
