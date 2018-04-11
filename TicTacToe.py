@@ -10,85 +10,110 @@ def mouseClick(event):
 
     if event.x<=150 and event.y<=150:
         Sprite(X,(0,0))
-        data['square'] = X
+        data['square'] = 'X'
         Computerturn()
+        isEmpty(1)
 
     elif event.x<=300 and event.y<=150:
         Sprite(X,(150,0))
-        data['square2'] = X
+        data['square2'] = 'X'
         Computerturn()
+        isEmpty(2)
+
 
     elif event.x<=450 and event.y<=150:
         Sprite(X,(300,0))
-        data['square3'] = X
+        data['square3'] = 'X'
         Computerturn()
+        isEmpty(3)
+
 
     elif event.x<=150 and event.y<=300:
         Sprite(X,(0,150))
-        data['square4'] = X
+        data['square4'] = 'X'
         Computerturn()
+        isEmpty(4)
+
 
     elif event.x<=300 and event.y<=300:
         Sprite(X,(150,150))
-        data['square5'] = X
+        data['square5'] = 'X'
         Computerturn()
+        isEmpty(5)
+
 
     elif event.x<=450 and event.y<=300:
         Sprite(X,(300,150))
-        data['square6'] = X
+        data['square6'] = 'X'
         Computerturn()
+        isEmpty(6)
+
 
     elif event.x<=150 and event.y<=450:
         Sprite(X,(0,300))
-        data['square7'] = X
+        data['square7'] = 'X'
         Computerturn()
+        isEmpty(7)
+
 
     elif event.x<=300 and event.y<=450:
         Sprite(X,(150,300))
-        data['square8'] = X
+        data['square8'] = 'X'
         Computerturn()
+        isEmpty(8)
+
 
     else:
         Sprite(X,(300,300))
-        data['square9'] = X
+        data['square9'] = 'X'
         Computerturn()
+        isEmpty(9)
+
 
 
 def isEmpty(comp_number):
     if comp_number == 1:
-        if data['square1'] == X or data['square1'] == O:
+        if data['square1'] == 'X' or data['square1'] == 'O':
             return False
         return True
+    
     if comp_number == 2:
-        if data['square2'] == X or data['square2'] == O:
+        if data['square2'] == 'X' or data['square2'] == 'O':
             return False
         return True
+    
     if comp_number == 3:
-        if data['square3'] == X or data['square3'] == O:
+        if data['square3'] == 'X' or data['square3'] =='O':
             return False
         return True
+    
     if comp_number == 4:
-        if data['square4'] == X or data['square4'] == O:
+        if data['square4'] == 'X' or data['square4'] == 'O':
             return False
         return True
+    
     if comp_number == 5:
-        if data['square5'] == X or data['square5'] == O:
+        if data['square5'] == 'X' or data['square5'] == 'O':
             return False
         return True
+    
     if comp_number == 6:
-        if data['square6'] == X or data['square6'] == O:
+        if data['square6'] == 'X' or data['square6'] == 'O':
             return False
         return True
+    
     if comp_number == 7:
-        if data['square7'] == X or data['square7'] == O:
+        if data['square7'] == 'X' or data['square7'] == 'O':
             return False
         return True
+    
     if comp_number == 8:
-        if data['square8'] == X or data['square8'] == O:
+        if data['square8'] == 'X' or data['square8'] == 'O':
             return False
         return True
+    
     if comp_number == 9:
-        if data['square9'] == X or data['square9'] == O:
+        if data['square9'] == 'X' or data['square9'] == 'O':
             return False
         return True
     
@@ -99,48 +124,47 @@ def Computerturn():
     comp_num=randint(1,9)
     O=TextAsset('O',fill=black,style='bold 120pt Times')#
 
-    
     if comp_num==1:
         Sprite(O,(0,0))
-        data['square'] = O
+        data['square1'] = 'O'
 
     elif comp_num==2:
         Sprite(O,(150,0))
-        data['square'] = O
+        data['square2'] = 'O'
 
     elif comp_num==3:
         Sprite(O,(300,0))
-        data['square'] = O
+        data['square3'] = 'O'
 
     elif comp_num==4:
         Sprite(O,(0,150))
-        data['square'] = O
+        data['square4'] = 'O'
 
     elif comp_num==5:
         Sprite(O,(150,150))
-        data['square'] = O
+        data['square5'] = 'O'
 
     elif comp_num==6:
         Sprite(O,(300,150))
-        data['square'] = O
+        data['square6'] = 'O'
 
     elif comp_num==7:
         Sprite(O,(0,300))
-        data['square'] =O
+        data['square7'] = 'O'
 
     elif comp_num==8:
         Sprite(O,(150,300))
-        data['square'] = O
+        data['square8'] = 'O'
 
     elif comp_num==9:
         Sprite(O,(300,300))
-        data['square'] = O
+        data['square9'] = 'O'
 
 
 
 if __name__ == '__main__':
     data = {}
-    data['square'] = ''
+    data['square1'] = ''
     data['square2'] = ''
     data['square3'] = ''
     data['square4'] = ''
@@ -150,7 +174,7 @@ if __name__ == '__main__':
     data['square8'] = ''
     data['square9'] = ''
     
-   
+    
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
     blackOutline=LineStyle(1, black)
