@@ -64,48 +64,47 @@ def mouseClick(event):
     
 def isEmpty(comp_number):
     if comp_number == 1:
-        if data['square1'] == 'X' or data['square1'] == 'O' and data['Game Over'] = False:
+        if data['square1'] == 'X' or data['square1'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 2:
-        if data['square2'] == 'X' or data['square2'] == 'O' and data['Game Over'] = False:
+        if data['square2'] == 'X' or data['square2'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 3:
-        if data['square3'] == 'X' or data['square3'] =='O'     and data['Game Over'] = False
-:
+        if data['square3'] == 'X' or data['square3'] =='O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 4:
-        if data['square4'] == 'X' or data['square4'] == 'O':
+        if data['square4'] == 'X' or data['square4'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 5:
-        if data['square5'] == 'X' or data['square5'] == 'O':
+        if data['square5'] == 'X' or data['square5'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 6:
-        if data['square6'] == 'X' or data['square6'] == 'O':
+        if data['square6'] == 'X' or data['square6'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 7:
-        if data['square7'] == 'X' or data['square7'] == 'O':
+        if data['square7'] == 'X' or data['square7'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 8:
-        if data['square8'] == 'X' or data['square8'] == 'O':
+        if data['square8'] == 'X' or data['square8'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
     if comp_number == 9:
-        if data['square9'] == 'X' or data['square9'] == 'O':
+        if data['square9'] == 'X' or data['square9'] == 'O' and data['Game Over'] == False:
             return False
         return True
     
