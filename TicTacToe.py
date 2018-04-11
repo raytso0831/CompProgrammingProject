@@ -8,111 +8,102 @@ def mouseClick(event):
     X=TextAsset('X',fill=black,style='bold 120pt Times')#
 
 
-    if event.x<=150 and event.y<=150:
+    if event.x<=150 and event.y<=150 and isEmpty(1) == True:
         Sprite(X,(0,0))
         data['square'] = 'X'
         Computerturn()
-        isEmpty(1)
 
-    elif event.x<=300 and event.y<=150:
+    elif event.x<=300 and event.y<=150 and isEmpty(2) == True:
         Sprite(X,(150,0))
         data['square2'] = 'X'
         Computerturn()
-        isEmpty(2)
 
 
-    elif event.x<=450 and event.y<=150:
+    elif event.x<=450 and event.y<=150 and isEmpty(3) == True:
         Sprite(X,(300,0))
         data['square3'] = 'X'
         Computerturn()
-        isEmpty(3)
 
 
-    elif event.x<=150 and event.y<=300:
+    elif event.x<=150 and event.y<=300 and isEmpty(4) == True:
         Sprite(X,(0,150))
         data['square4'] = 'X'
         Computerturn()
-        isEmpty(4)
 
 
-    elif event.x<=300 and event.y<=300:
+    elif event.x<=300 and event.y<=300 and isEmpty(5) == True:
         Sprite(X,(150,150))
         data['square5'] = 'X'
         Computerturn()
-        isEmpty(5)
 
 
-    elif event.x<=450 and event.y<=300:
+    elif event.x<=450 and event.y<=300 and isEmpty(6) == True:
         Sprite(X,(300,150))
         data['square6'] = 'X'
         Computerturn()
-        isEmpty(6)
 
 
-    elif event.x<=150 and event.y<=450:
+    elif event.x<=150 and event.y<=450 and isEmpty(7) == True:
         Sprite(X,(0,300))
         data['square7'] = 'X'
         Computerturn()
-        isEmpty(7)
 
 
-    elif event.x<=300 and event.y<=450:
+    elif event.x<=300 and event.y<=450 and isEmpty(8) == True:
         Sprite(X,(150,300))
         data['square8'] = 'X'
         Computerturn()
-        isEmpty(8)
 
-
-    else:
+    elif event.x<=450 and event.y<=450 and isEmpty(9) == True:
         Sprite(X,(300,300))
-        data['square9'] = 'X'
+        data['square8'] = 'X'
         Computerturn()
-        isEmpty(9)
 
 
 
+    
 def isEmpty(comp_number):
-    if comp_number == 1:
+    if comp_number == 1 and isEmpty(1) == True:
         if data['square1'] == 'X' or data['square1'] == 'O':
             return False
         return True
     
-    if comp_number == 2:
+    if comp_number == 2 and isEmpty(2) == True:
         if data['square2'] == 'X' or data['square2'] == 'O':
             return False
         return True
     
-    if comp_number == 3:
+    if comp_number == 3 and isEmpty(3) == True:
         if data['square3'] == 'X' or data['square3'] =='O':
             return False
         return True
     
-    if comp_number == 4:
+    if comp_number == 4 and isEmpty(4) == True:
         if data['square4'] == 'X' or data['square4'] == 'O':
             return False
         return True
     
-    if comp_number == 5:
+    if comp_number == 5 and isEmpty(5) == True:
         if data['square5'] == 'X' or data['square5'] == 'O':
             return False
         return True
     
-    if comp_number == 6:
+    if comp_number == 6 and isEmpty(6) == True:
         if data['square6'] == 'X' or data['square6'] == 'O':
             return False
         return True
     
-    if comp_number == 7:
+    if comp_number == 7 and isEmpty(7) == True:
         if data['square7'] == 'X' or data['square7'] == 'O':
             return False
         return True
     
-    if comp_number == 8:
+    if comp_number == 8 and isEmpty(8) == True:
         if data['square8'] == 'X' or data['square8'] == 'O':
             return False
         return True
     
-    if comp_number == 9:
+    if comp_number == 9 and isEmpty(9) == True:
         if data['square9'] == 'X' or data['square9'] == 'O':
             return False
         return True
