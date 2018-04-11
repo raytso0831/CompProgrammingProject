@@ -64,17 +64,18 @@ def mouseClick(event):
     
 def isEmpty(comp_number):
     if comp_number == 1:
-        if data['square1'] == 'X' or data['square1'] == 'O':
+        if data['square1'] == 'X' or data['square1'] == 'O' and data['Game Over'] = False:
             return False
         return True
     
     if comp_number == 2:
-        if data['square2'] == 'X' or data['square2'] == 'O':
+        if data['square2'] == 'X' or data['square2'] == 'O' and data['Game Over'] = False:
             return False
         return True
     
     if comp_number == 3:
-        if data['square3'] == 'X' or data['square3'] =='O':
+        if data['square3'] == 'X' or data['square3'] =='O'     and data['Game Over'] = False
+:
             return False
         return True
     
@@ -150,25 +151,51 @@ def Computerturn():
     elif comp_num==9:
         Sprite(O,(300,300))
         data['square9'] = 'O'
-def winner():
-    if (data['square1'] == 'x' and data['square2'] == 'x' and data['square3'] == 'x') or (data['square1'] == 'o' and data['square2'] == 'o' and data['square3'] == 'o'):
-        return True
-    elif (data['square4'] == 'x' and data['square5'] == 'x' and data['square6'] == 'x') or (data['square4'] == 'o' and data['square5'] == 'o' and data['square6'] == 'o'):
-        return True
-    elif (data['square7'] == 'x' and data['square8'] == 'x' and data['square9'] == 'x') or (data['square7'] == 'o' and data['square8'] == 'o' and data['square9'] == 'o'):
-        return True
-    elif (data['square1'] == 'x' and data['square4'] == 'x' and data['square7'] == 'x') or (data['square1'] == 'o' and data['square4'] == 'o' and data['square7'] == 'o'):
-        return True
-    elif (data['square2'] == 'x' and data['square5'] == 'x' and data['square8'] == 'x') or (data['square2'] == 'o' and data['square5'] == 'o' and data['square8'] == 'o'):
-        return True
-    elif (data['square3'] == 'x' and data['square6'] == 'x' and data['square9'] == 'x') or (data['square3'] == 'o' and data['square6'] == 'o' and data['square9'] == 'o'):
-        return True
-    elif (data['square1'] == 'x' and data['square5'] == 'x' and data['square9'] == 'x') or (data['square1'] == 'o' and data['square5'] == 'o' and data['square9'] == 'o'):
-        return True
-    elif (data['square3'] == 'x' and data['square5'] == 'x' and data['square7'] == 'x') or (data['square3'] == 'o' and data['square5'] == 'o' and data['square7'] == 'o'):
-        return True
-    return False
+        
+    winner()
+    return
 
+def winner():
+    if (data['square1'] == 'x' and data['square2'] == 'x' and data['square3'] == 'x') :
+        return True
+    elif (data['square1'] == 'o' and data['square2'] == 'o' and data['square3'] == 'o'):
+        return True
+    elif (data['square4'] == 'x' and data['square5'] == 'x' and data['square6'] == 'x'):
+        return True
+    elif (data['square4'] == 'o' and data['square5'] == 'o' and data['square6'] == 'o'):
+        return True
+    elif (data['square7'] == 'x' and data['square8'] == 'x' and data['square9'] == 'x'): 
+        return True
+    elif (data['square7'] == 'o' and data['square8'] == 'o' and data['square9'] == 'o'):
+        return True
+    elif (data['square1'] == 'x' and data['square4'] == 'x' and data['square7'] == 'x'):
+        return True
+    elif(data['square1'] ==  'o' and data['square4'] == 'o' and data['square7'] == 'o'):
+        return True
+    elif (data['square2'] == 'x' and data['square5'] == 'x' and data['square8'] == 'x'):
+        return True
+    elif(data['square2'] == 'o' and data['square5'] == 'o' and data['square8'] == 'o'):
+        return True
+    elif (data['square3'] == 'x' and data['square6'] == 'x' and data['square9'] == 'x'):
+        return True
+    elif(data['square3'] == 'o' and data['square6'] == 'o' and data['square9'] == 'o'):
+        return True
+    elif (data['square1'] == 'x' and data['square5'] == 'x' and data['square9'] == 'x'):
+        return True
+    elif (data['square1'] == 'o' and data['square5'] == 'o' and data['square9'] == 'o'):
+        return True
+    elif (data['square3'] == 'x' and data['square5'] == 'x' and data['square7'] == 'x'):
+        return True
+    elif(data['square3'] == 'o' and data['square5'] == 'o' and data['square7'] == 'o'):
+        return True
+    else:
+        return False
+
+def fullboard ():
+      if isEmpty(1) == False and isEmpty(2) == False and isEmpty(3) == False and isEmpty(4) == False and isEmpty(5) == False and isEmpty(6) == False and isEmpty(7) == False and isEmpty(8) == False and isEmpty(9) == False:
+        return True
+        return False
+    
 
 
 if __name__ == '__main__':
@@ -182,6 +209,8 @@ if __name__ == '__main__':
     data['square7'] = ''
     data['square8'] = ''
     data['square9'] = ''
+    data['Game Over'] = False
+
     
     
     white=Color(0xFFFFFF,1)
