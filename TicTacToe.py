@@ -159,6 +159,24 @@ def Computerturn():
     elif comp_num==9:
         Sprite(O,(300,300))
         data['square9'] = 'O'
+def winner():
+    if (data['square1'] == 'x' and data['square2'] == 'x' and data['square3'] == 'x') or (data['square1'] == 'o' and data['square2'] == 'o' and data['square3'] == 'o'):
+        return True
+    elif (data['square4'] == 'x' and data['square5'] == 'x' and data['square6'] == 'x') or (data['square4'] == 'o' and data['square5'] == 'o' and data['square6'] == 'o'):
+        return True
+    elif (data['square7'] == 'x' and data['square8'] == 'x' and data['square9'] == 'x') or (data['square7'] == 'o' and data['square8'] == 'o' and data['square9'] == 'o'):
+        return True
+    elif (data['square1'] == 'x' and data['square4'] == 'x' and data['square7'] == 'x') or (data['square1'] == 'o' and data['square4'] == 'o' and data['square7'] == 'o'):
+        return True
+    elif (data['square2'] == 'x' and data['square5'] == 'x' and data['square8'] == 'x') or (data['square2'] == 'o' and data['square5'] == 'o' and data['square8'] == 'o'):
+        return True
+    elif (data['square3'] == 'x' and data['square6'] == 'x' and data['square9'] == 'x') or (data['square3'] == 'o' and data['square6'] == 'o' and data['square9'] == 'o'):
+        return True
+    elif (data['square1'] == 'x' and data['square5'] == 'x' and data['square9'] == 'x') or (data['square1'] == 'o' and data['square5'] == 'o' and data['square9'] == 'o'):
+        return True
+    elif (data['square3'] == 'x' and data['square5'] == 'x' and data['square7'] == 'x') or (data['square3'] == 'o' and data['square5'] == 'o' and data['square7'] == 'o'):
+        return True
+    return False
 
 
 
