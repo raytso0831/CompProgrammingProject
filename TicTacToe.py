@@ -200,7 +200,7 @@ def Computerturn():
 
 
 def winner():
-    computer_winner=TextAsset('Computer Wins!!!',fill=black,style='bold 120pt Times')
+    computer_winner=TextAsset('Computer Wins!!!',fill=black,style='bold 40pt Times')
     user_winner=TextAsset('YOU wIN!!!!!',fill=black,style='bold 40pt Times')
     if (data['square1'] == 'X' and data['square2'] == 'X' and data['square3'] == 'X') :
         Sprite(user_winner,(500,100))
