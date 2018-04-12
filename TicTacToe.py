@@ -6,68 +6,92 @@ from ggame import *
 def mouseClick(event):
     print(event.x,event.y)
     X=TextAsset('X',fill=black,style='bold 120pt Times')#
+    TieGame=TextAsset('Its a tie',fill=black,style='bold 120pt Times')#
+
 
 
     if event.x<=150 and event.y<=150 and isEmpty(1) == True:
         Sprite(X,(0,0))
         data['square1'] = 'X'
         winner()
-        Computerturn()
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
+            
 
     elif 150 < event.x<=300 and event.y<=150 and isEmpty(2) == True:
         Sprite(X,(150,0))
         data['square2'] = 'X'
         winner()
-        Computerturn()
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
 
     elif 300<event.x<=450 and event.y<=150 and isEmpty(3) == True:
         Sprite(X,(300,0))
         data['square3'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
     elif event.x<=150 and 150<event.y<=300 and isEmpty(4) == True:
         Sprite(X,(0,150))
         data['square4'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
     elif 150<event.x<=300 and 150<event.y<=300 and isEmpty(5) == True:
         Sprite(X,(150,150))
         data['square5'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
     elif 300<event.x<=450 and 150<event.y<=300 and isEmpty(6) == True:
         Sprite(X,(300,150))
         data['square6'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
     elif event.x<=150 and 300<event.y<=450 and isEmpty(7) == True:
         Sprite(X,(0,300))
         data['square7'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
     elif 150<event.x<=300 and 300<event.y<=450 and isEmpty(8) == True:
         Sprite(X,(150,300))
         data['square8'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
+            
     elif 300<event.x<=450 and 300<event.y<=450 and isEmpty(9) == True:
         Sprite(X,(300,300))
-        data['square8'] = 'X'
+        data['square9'] = 'X'
         winner()
-        Computerturn()
-
+        if fullboard()==False:
+            Computerturn()
+        elif fullboard()== True and data['Game Over']==False:
+            Sprite(TieGame,(100,100))
 
 
     
@@ -126,18 +150,25 @@ def Computerturn():
     if comp_num==1 and isEmpty(1) == True:
         Sprite(O,(0,0))
         data['square1'] = 'O'
+        winner()
+
 
     elif comp_num==2 and isEmpty(2) == True:
         Sprite(O,(150,0))
-        data['square2'] = 'O'
+        data['square2'] = 'O'        
+        winner()
+
 
     elif comp_num==3 and isEmpty(3) == True:
         Sprite(O,(300,0))
-        data['square3'] = 'O'
+        data['square3'] = 'O'   
+        winner()
+
 
     elif comp_num==4 and isEmpty(4) == True:
         Sprite(O,(0,150))
         data['square4'] = 'O'
+        winner()
 
     elif comp_num==5 and isEmpty(5) == True:
         Sprite(O,(150,150))
@@ -146,24 +177,31 @@ def Computerturn():
     elif comp_num==6 and isEmpty(6) == True:
         Sprite(O,(300,150))
         data['square6'] = 'O'
+        winner()
 
     elif comp_num==7 and isEmpty(7) == True:
         Sprite(O,(0,300))
         data['square7'] = 'O'
+        winner()
 
     elif comp_num==8 and isEmpty(8) == True:
         Sprite(O,(150,300))
         data['square8'] = 'O'
+        winner()
 
     elif comp_num==9 and isEmpty(9) == True:
         Sprite(O,(300,300))
         data['square9'] = 'O'
+        winner()
+    
+    else:
+        Computerturn()
 
 
 
 def winner():
     computer_winner=TextAsset('Computer Wins!!!',fill=black,style='bold 120pt Times')
-    user_winner=TextAsset('YOU wIN!!!!!',fill=black,style='bold 120pt Times')
+    user_winner=TextAsset('YOU wIN!!!!!',fill=black,style='bold 40pt Times')
     if (data['square1'] == 'X' and data['square2'] == 'X' and data['square3'] == 'X') :
         print('hi')
         Sprite(user_winner,(100,100))
@@ -235,9 +273,9 @@ def winner():
     
 
 def fullboard ():
-      if isEmpty(1) == False and isEmpty(2) == False and isEmpty(3) == False and isEmpty(4) == False and isEmpty(5) == False and isEmpty(6) == False and isEmpty(7) == False and isEmpty(8) == False and isEmpty(9) == False:
+     if isEmpty(1) == False and isEmpty(2) == False and isEmpty(3) == False and isEmpty(4) == False and isEmpty(5) == False and isEmpty(6) == False and isEmpty(7) == False and isEmpty(8) == False and isEmpty(9) == False:
         return True
-        return False
+     return False
     
 
 
