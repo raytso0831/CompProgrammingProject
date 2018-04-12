@@ -114,39 +114,39 @@ def Computerturn():
     comp_num=randint(1,9)
     O=TextAsset('O',fill=black,style='bold 120pt Times')#
     
-    if comp_num==1:
+    if comp_num==1 and isEmpty(1) == True:
         Sprite(O,(0,0))
         data['square1'] = 'O'
 
-    elif comp_num==2:
+    elif comp_num==2 and isEmpty(2) == True:
         Sprite(O,(150,0))
         data['square2'] = 'O'
 
-    elif comp_num==3:
+    elif comp_num==3 and isEmpty(3) == True:
         Sprite(O,(300,0))
         data['square3'] = 'O'
 
-    elif comp_num==4:
+    elif comp_num==4 and isEmpty(4) == True:
         Sprite(O,(0,150))
         data['square4'] = 'O'
 
-    elif comp_num==5:
+    elif comp_num==5 and isEmpty(5) == True:
         Sprite(O,(150,150))
         data['square5'] = 'O'
 
-    elif comp_num==6:
+    elif comp_num==6 and isEmpty(6) == True:
         Sprite(O,(300,150))
         data['square6'] = 'O'
 
-    elif comp_num==7:
+    elif comp_num==7 and isEmpty(7) == True:
         Sprite(O,(0,300))
         data['square7'] = 'O'
 
-    elif comp_num==8:
+    elif comp_num==8 and isEmpty(8) == True:
         Sprite(O,(150,300))
         data['square8'] = 'O'
 
-    elif comp_num==9:
+    elif comp_num==9 and isEmpty(9) == True:
         Sprite(O,(300,300))
         data['square9'] = 'O'
 
