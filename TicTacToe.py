@@ -10,7 +10,7 @@ def mouseClick(event):
 
     if event.x<=150 and event.y<=150 and isEmpty(1) == True:
         Sprite(X,(0,0))
-        data['square'] = 'X'
+        data['square1'] = 'X'
         winner()
         Computerturn()
 
@@ -165,69 +165,70 @@ def winner():
     computer_winner=TextAsset('Computer Wins!!!',fill=black,style='bold 120pt Times')
     user_winner=TextAsset('YOU wIN!!!!!',fill=black,style='bold 120pt Times')
     if (data['square1'] == 'X' and data['square2'] == 'X' and data['square3'] == 'X') :
-        Sprite(user_winner,(500,500))
+        print('hi')
+        Sprite(user_winner,(100,100))
         data['Game Over']= True
 
     elif (data['square1'] == 'O' and data['square2'] == 'O' and data['square3'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] =True
 
     elif (data['square4'] == 'X' and data['square5'] == 'X' and data['square6'] == 'X'):
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] = True
 
     elif (data['square4'] == 'O' and data['square5'] == 'O' and data['square6'] == 'O'):
-        Sprite(computer_winner,(500,500))    
+        Sprite(computer_winner,(100,100))    
         data['Game Over'] = True
 
     elif (data['square7'] == 'X' and data['square8'] == 'X' and data['square9'] == 'X'): 
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] =True
 
     elif (data['square7'] == 'O' and data['square8'] == 'O' and data['square9'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] =True
 
         
         
     elif (data['square1'] == 'X' and data['square4'] == 'X' and data['square7'] == 'X'):
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] =True
 
     elif(data['square1'] ==  'O' and data['square4'] == 'O' and data['square7'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] = True
 
     elif (data['square2'] == 'X' and data['square5'] == 'X' and data['square8'] == 'X'):
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] = True
 
     elif(data['square2'] == 'O' and data['square5'] == 'O' and data['square8'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] = True
 
     elif (data['square3'] == 'X' and data['square6'] == 'X' and data['square9'] == 'X'):
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] =True
 
     elif(data['square3'] == 'O' and data['square6'] == 'O' and data['square9'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] =True
 
     elif (data['square1'] == 'X' and data['square5'] == 'X' and data['square9'] == 'X'):
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] =True
 
     elif (data['square1'] == 'O' and data['square5'] == 'O' and data['square9'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] =True
 
     elif (data['square3'] == 'X' and data['square5'] == 'X' and data['square7'] == 'X'):
-        Sprite(user_winner,(500,500))
+        Sprite(user_winner,(100,100))
         data['Game Over'] =True
 
     elif(data['square3'] == 'O' and data['square5'] == 'O' and data['square7'] == 'O'):
-        Sprite(computer_winner,(500,500))
+        Sprite(computer_winner,(100,100))
         data['Game Over'] =True
 
 
