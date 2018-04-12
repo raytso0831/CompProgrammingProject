@@ -3,8 +3,8 @@
 #TicTacToe.py
 
 from ggame import *
-def mouseClick(event):
-    print(event.x,event.y)
+def mouseClick(event):#determine which square the user clicked and place an X there if it is a valid move.
+    print(event.x,event.y)#determine the the coordinate you clicked on
     X=TextAsset('X',fill=black,style='bold 120pt Times')#
     TieGame=TextAsset('Its a tie',fill=black,style='bold 40pt Times')#
 
@@ -95,7 +95,9 @@ def mouseClick(event):
 
 
     
-def isEmpty(comp_number):
+def isEmpty(comp_number): #This checks if there is a X or O in the square
+#The function should return True if the square is empty and False if there is already an X or O there.
+    
     if comp_number == 1:
         if data['square1'] == 'X' or data['square1'] == 'O' and data['Game Over'] == False:
             return False
@@ -142,7 +144,7 @@ def isEmpty(comp_number):
         return True
     
     
-def Computerturn():
+def Computerturn(): #This pick a random unused square and place the computer piece there.
     from random import randint
     comp_num=randint(1,9)
     O=TextAsset('O',fill=black,style='bold 120pt Times')#
@@ -199,9 +201,9 @@ def Computerturn():
 
 
 
-def winner():
-    computer_winner=TextAsset('Computer Wins!!!',fill=black,style='bold 40pt Times')
-    user_winner=TextAsset('YOU wIN!!!!!',fill=black,style='bold 40pt Times')
+def winner(): #This function return True if someone won and False otherwise.
+    computer_winner=TextAsset('Computer Wins!!! Better luck next time',fill=black,style='bold 40pt Times')
+    user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Times')
     if (data['square1'] == 'X' and data['square2'] == 'X' and data['square3'] == 'X') :
         Sprite(user_winner,(500,100))
         data['Game Over']= True
@@ -226,8 +228,6 @@ def winner():
         Sprite(computer_winner,(500,250))
         data['Game Over'] =True
 
-        
-        
     elif (data['square1'] == 'X' and data['square4'] == 'X' and data['square7'] == 'X'):
         Sprite(user_winner,(500,250))
         data['Game Over'] =True
@@ -271,14 +271,14 @@ def winner():
 
     
 
-def fullboard ():
+def fullboard (): #The function should return True if every square is filled up with an X or O and False otherwise.
      if isEmpty(1) == False and isEmpty(2) == False and isEmpty(3) == False and isEmpty(4) == False and isEmpty(5) == False and isEmpty(6) == False and isEmpty(7) == False and isEmpty(8) == False and isEmpty(9) == False:
         return True
      return False
     
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': #stores variable
     data = {}
     data['square1'] = ''
     data['square2'] = ''
@@ -292,7 +292,7 @@ if __name__ == '__main__':
     data['Game Over'] = False
 
     
-    
+    #graphics
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
     blackOutline=LineStyle(1, black)
@@ -306,7 +306,7 @@ if __name__ == '__main__':
     whiteRectangle8=RectangleAsset(150,150,blackOutline,white) 
     whiteRectangle9=RectangleAsset(150,150,blackOutline,white) 
     
-    
+    #Printing of the graphics
     Sprite(whiteRectangle,(0,0))
     Sprite(whiteRectangle2,(150,0))
     Sprite(whiteRectangle3,(300,0))
