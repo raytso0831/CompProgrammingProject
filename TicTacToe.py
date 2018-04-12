@@ -109,12 +109,11 @@ def isEmpty(comp_number):
         return True
     
     
-    
 def Computerturn():
     from random import randint
     comp_num=randint(1,9)
     O=TextAsset('O',fill=black,style='bold 120pt Times')#
-
+    
     if comp_num==1:
         Sprite(O,(0,0))
         data['square1'] = 'O'
