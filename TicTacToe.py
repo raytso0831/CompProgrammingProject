@@ -295,6 +295,8 @@ if __name__ == '__main__': #stores variable
     #graphics
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
+    
+
     blackOutline=LineStyle(1, black)
     whiteRectangle=RectangleAsset(150,150,blackOutline,white) 
     whiteRectangle2=RectangleAsset(150,150,blackOutline,white) 
