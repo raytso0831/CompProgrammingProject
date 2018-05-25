@@ -3,6 +3,54 @@
 #battleship.py
 
 from ggame import *
+def redrawall():
+    white=Color(0xFFFFFF,1)
+    black=Color(0x000000,1)
+    blackOutline=LineStyle(1, black)
+    whiteRectangle=RectangleAsset(75,75,blackOutline,white) 
+    for r in range(0,5):
+        for c in range(0,5):
+            Sprite
+
+board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
+
+if __name__ == '__main__':
+    redrawall()
+    App().run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+from ggame import *
  #graphics
 white=Color(0xFFFFFF,1)
 black=Color(0x000000,1)
@@ -31,3 +79,4 @@ Sprite(whiteRectangle9,(300,300))
     
     
 App().run()
+'''
