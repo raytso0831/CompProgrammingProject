@@ -12,6 +12,9 @@ def redrawall():
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,(10+(2*RADIUS+10)*r,10+(2*RADIUS+10)*c))
+    for r in range(0,5):
+        for c in range(0,5):
+            Sprite(whiteRectangle,(500+(2*RADIUS+10)*r,10+(2*RADIUS+10)*c))
 
 
 board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
