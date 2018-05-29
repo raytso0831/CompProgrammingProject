@@ -4,13 +4,15 @@
 
 from ggame import *
 def redrawall():
+    RADIUS=33
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
     blackOutline=LineStyle(1, black)
     whiteRectangle=RectangleAsset(75,75,blackOutline,white) 
     for r in range(0,5):
         for c in range(0,5):
-            Sprite
+            Sprite(whiteRectangle,(10+(2*RADIUS+10)*r,10+(2*RADIUS+10)*c))
+
 
 board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
 
