@@ -11,7 +11,7 @@ def redrawall():
     black=Color(0x000000,1)
     blackOutline=LineStyle(1, black)
     whiteRectangle=RectangleAsset(75,75,blackOutline,white)
-    redCircle=CircleAsset(50,50,blackOutline,red)
+    redCircle=CircleAsset(35,blackOutline,red)
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,((2*RADIUS+10)*r,(2*RADIUS+10)*c))
