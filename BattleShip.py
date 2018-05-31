@@ -14,9 +14,9 @@ def redrawall():
     redCircle=CircleAsset(35,blackOutline,red)
     for r in range(0,5):
         for c in range(0,5):
-            Sprite(whiteRectangle,((2*RADIUS+10)*r,(2*RADIUS+10)*c))
+            Sprite(whiteRectangle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
             if data['player'][r][c]=='ship':
-                Sprite(redCircle,((2*RADIUS+10)*r,(2*RADIUS+10)*c))
+                Sprite(redCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
     
     for r in range(0,5):
         for c in range(0,5):
