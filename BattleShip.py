@@ -30,6 +30,14 @@ def mouseClick(event):
      
      
 
+from random import randint
+def pickComputerShips():
+    if data['computer_ships']<3:
+        data['computer'][event.y//75][event.x//75]='ship'
+        data['computer_ship']+=1
+        redrawall()
+        
+
 def buildBoard():
     board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
     return board
@@ -38,17 +46,11 @@ if __name__ == '__main__':
     data={}
     data['player']=buildBoard()
     data['computer']=buildBoard()
+    data['ships_placed']=0
+    data['computer_ships']=0
     redrawall()
     App().listenMouseEvent('click',mouseClick)
     App().run()
-
-
-
-
-
-
-
-
 
 
 
