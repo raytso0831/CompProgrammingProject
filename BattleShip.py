@@ -16,7 +16,7 @@ def redrawall():
         for c in range(0,5):
             Sprite(whiteRectangle,((2*RADIUS+10)*r,(2*RADIUS+10)*c))
             if data['player'][r][c]=='ship':
-                Sprite(redCircle)
+                Sprite(redCircle,((2*RADIUS+10)*r,(2*RADIUS+10)*c))
     
     for r in range(0,5):
         for c in range(0,5):
