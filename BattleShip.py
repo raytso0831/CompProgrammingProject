@@ -1,7 +1,6 @@
-#Ray Tso
 #5/23/18
 #battleship.py
-
+from random import randint
 from ggame import *
 
 def redrawall():
@@ -32,11 +31,15 @@ def mouseClick(event):
      
      
 
-from random import randint
+
+
+
 def pickComputerShips():
-    if data['computer_ships']<3:
-        data['computer'][event.y//75][event.x//75]='ship'
-        data['computer_ship']+=1
+    while data['computer_ships']<3:
+        col=randint(0,4)
+        row=randint(0,4)
+        data['computer'][row][col]='ship'
+        data['computer_ships']+=1
         redrawall()
         
 
@@ -53,6 +56,7 @@ if __name__ == '__main__':
     redrawall()
     App().listenMouseEvent('click',mouseClick)
     App().run()
+    pickComputerShips()
 
 
 
