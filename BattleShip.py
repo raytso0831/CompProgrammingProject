@@ -27,13 +27,12 @@ def mouseClick(event):
      if data['ships_placed']<3:
          data['player'][event.y//75][event.x//75]='ship'
          data['ships_placed']+=1
-         redrawall()
+         while data['computer_ships']<3:
+             data['computer'][event.y//75][event.x//75]='ship'
+             data['computer_ships']+=1
+             redrawall()
      
-     
-
-
-
-
+    
 def pickComputerShips():
     while data['computer_ships']<3:
         col=randint(0,4)
