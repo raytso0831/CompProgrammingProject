@@ -21,6 +21,7 @@ def redrawall():
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,(500+(2*RADIUS+10)*r,(2*RADIUS+10)*c))
+            if data['computer'][r][c]=='ship':
 
 
 def mouseClick(event):
@@ -29,7 +30,7 @@ def mouseClick(event):
          data['player'][event.x//75][event.y//75]='ship'
          data['ships_placed']+=1
          while data['computer_ships']<3:
-             data['computer'][event.x-500//75][event.y//75]='ship'
+             data['computer'][(event.x-500)//75][event.y//75]='ship'
              redrawall()
      
     
