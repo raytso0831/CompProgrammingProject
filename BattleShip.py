@@ -9,23 +9,25 @@ def redrawall():
     red=Color(0xFF0000,1)
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
+    green=Color(0x00FC00,1)
+
     blackOutline=LineStyle(1, black)
     whiteRectangle=RectangleAsset(75,75,blackOutline,white)
     redCircle=CircleAsset(35,blackOutline,red)
-    blackX=TextAsset('X',fill=black,style='bold 60pt Times')
+    greenCircle=CircleAsset(35,blackOutline,green)
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
             if data['player'][r][c]=='ship':
-                Sprite(redCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+                Sprite(greenCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
     
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,(500+(2*RADIUS+10)*r,(2*RADIUS+10)*c))
             if data['computer'][r][c]=='ship':
-                Sprite(redCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+                Sprite(greenCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
             elif data['computer'][r][c]=='hit':
-                Sprite(blackX,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+                Sprite(redCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
 
 
 def mouseClick(event):
