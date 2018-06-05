@@ -15,13 +15,14 @@ def redrawall():
     whiteRectangle=RectangleAsset(75,75,blackOutline,white)
     redCircle=CircleAsset(35,blackOutline,red)
     greenCircle=CircleAsset(35,blackOutline,green)
+    blackX=TextAsset('X',fill=black,style='bold 60pt Arial')
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
             if data['player'][r][c]=='ship':
                 Sprite(greenCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
             elif data['player'][r][c]=='hit':
-                Sprite(redCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+                Sprite(redCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
     
     for r in range(0,5):
         for c in range(0,5):
@@ -30,6 +31,8 @@ def redrawall():
                 Sprite(greenCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
             elif data['computer'][r][c]=='hit':
                 Sprite(redCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            elif data['computer'][r][c]=='miss':
+                Sprite(blackX,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
 
 
 def mouseClick(event):
@@ -39,7 +42,7 @@ def mouseClick(event):
          data['ships_placed']+=1
      else:
          if data['computer'][event.y//75][(event.x-500)//75]=='ship':
-             data['computer'][event.y//75][(event.x-500)//75]='hit'
+            data['computer'][event.y//75][(event.x-500)//75]='hit'
          else:
              data['computer'][event.y//75][(event.x-500)//75]='miss'
              
