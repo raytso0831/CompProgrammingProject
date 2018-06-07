@@ -26,7 +26,7 @@ def redrawall():
     
     for r in range(0,5):
         for c in range(0,5):
-            Sprite(whiteRectangle,(500+(2*RADIUS+10)*r,(2*RADIUS+10)*c))
+            Sprite(whiteRectangle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
             if data['computer'][r][c]=='ship':
                 Sprite(greenCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
             elif data['computer'][r][c]=='hit':
@@ -57,8 +57,7 @@ def pickComputerShips():
         if data['computer'][row][col]!='ship':
             data['computer_ships']+=1
             data['computer'][row][col]='ship'
-        data['computer_ships']+=1
-        redrawall()
+    redrawall()
         
 
 def buildBoard():
@@ -71,10 +70,9 @@ if __name__ == '__main__':
     data['computer']=buildBoard()
     data['ships_placed']=0
     data['computer_ships']=0
-    redrawall()
+    pickComputerShips()    
     App().listenMouseEvent('click',mouseClick)
     App().run()
-    pickComputerShips()
 
 
 
