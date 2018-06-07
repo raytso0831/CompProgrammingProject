@@ -38,14 +38,13 @@ def redrawall():
 def mouseClick(event):
      print(event.x//75,event.y//75)
      if data['ships_placed']<3:
-         data['player'][event.y//75][event.x//75]='ship'
-         data['ships_placed']+=1
-     else:
-         if data['computer'][event.y//75][(event.x-500)//75]=='ship':
-            data['computer'][event.y//75][(event.x-500)//75]='hit'
+         if data['player'][event.y//75][event.x//75]!='ship':
+             data['ships_placed']+=1
+             data['player'][event.y//75][event.x//75]='ship'
          else:
-             data['computer'][event.y//75][(event.x-500)//75]='miss'
-             
+             if data['computer'][event.y//75][(event.x-500)//75]!='ship':
+                 data['computer_ships']+=1
+                 data['computer'][event.y//75][(event.x-500)//75]='ship'
      redrawall()
      
     
