@@ -58,6 +58,8 @@ def pickComputerShips():
             data['computer_ships']+=1
             data['computer'][row][col]='ship'
     redrawall()
+
+
         
 
 def buildBoard():
