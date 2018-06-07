@@ -41,10 +41,12 @@ def mouseClick(event):
          if data['player'][event.y//75][event.x//75]!='ship':
              data['ships_placed']+=1
              data['player'][event.y//75][event.x//75]='ship'
-         else:
-             if data['computer'][event.y//75][(event.x-500)//75]!='ship':
-                 data['computer_ships']+=1
-                 data['computer'][event.y//75][(event.x-500)//75]='ship'
+     else:
+        if data['computer'][event.y//75][(event.x-500)//75]=='ship':
+            data['computer'][event.y//75][(event.x-500)//75]='hit'
+        else:
+             data['computer'][event.y//75][(event.x-500)//75]='miss'
+             
      redrawall()
      
     
@@ -52,7 +54,9 @@ def pickComputerShips():
     while data['computer_ships']<3:
         col=randint(0,4)
         row=randint(0,4)
-        data['computer'][row][col]='ship'
+        if data['computer'][row][col]!='ship':
+            data['computer_ships']+=1
+            data['computer'][row][col]='ship'
         data['computer_ships']+=1
         redrawall()
         
