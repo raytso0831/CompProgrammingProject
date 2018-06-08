@@ -49,7 +49,16 @@ def mouseClick(event):
              
      redrawall()
      
-    
+def computerTurn():
+    col=randint(0,4)
+    row=randint(0,4)
+    if data['computer'][row][col]=='ship':
+        data['computer'][row][col]='hit'
+    elif data['computer'][row][col]=='':
+        data['computer'][row][col]='miss'
+    else:
+        computerTurn()
+
 def pickComputerShips():
     while data['computer_ships']<3:
         col=randint(0,4)
