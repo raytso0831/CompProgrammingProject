@@ -23,6 +23,9 @@ def redrawall():
                 Sprite(greenCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
             elif data['player'][r][c]=='hit':
                 Sprite(redCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            elif data['player'][r][c]=='miss':
+                Sprite(blackX,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+                
     
     for r in range(0,5):
         for c in range(0,5):
@@ -46,16 +49,17 @@ def mouseClick(event):
             data['computer'][event.y//75][(event.x-500)//75]='hit'
         else:
              data['computer'][event.y//75][(event.x-500)//75]='miss'
+        computerTurn()
              
      redrawall()
      
 def computerTurn():
     col=randint(0,4)
     row=randint(0,4)
-    if data['computer'][row][col]=='ship':
-        data['computer'][row][col]='hit'
-    elif data['computer'][row][col]=='':
-        data['computer'][row][col]='miss'
+    if data['player'][row][col]=='ship':
+        data['player'][row][col]='hit'
+    elif data['player'][row][col]=='':
+        data['player'][row][col]='miss'
     else:
         computerTurn()
 
