@@ -1,16 +1,20 @@
 #Ray Tso
 #5/23/18
 #battleship.py
+
+#These are imports used.
 from random import randint
 from ggame import *
 
+# This function will draws the player board and computer board.
 def redrawall():
     RADIUS=33
+    #graphics for colors
     red=Color(0xFF0000,1)
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
     green=Color(0x00FC00,1)
-
+    #graphics for the board
     blackOutline=LineStyle(1, black)
     whiteRectangle=RectangleAsset(75,75,blackOutline,white)
     redCircle=CircleAsset(35,blackOutline,red)
@@ -26,7 +30,6 @@ def redrawall():
             elif data['player'][r][c]=='miss':
                 Sprite(blackX,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
                 
-    
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
@@ -37,6 +40,8 @@ def redrawall():
     if data['computer_ships_sunk']==3 or data['ships_sunk']==3:
     
      winner()
+
+#This function should figure out what row and column the user clicked on
 
 def mouseClick(event):
     if data['Game Over']==False:
@@ -56,6 +61,7 @@ def mouseClick(event):
                  computerTurn()
         redrawall()
      
+# The function should have the computer pick a random spot to guess and process the guess if it is a valid move. 
 def computerTurn():
     col=randint(0,4)
     row=randint(0,4)
@@ -67,6 +73,7 @@ def computerTurn():
     else:
         computerTurn()
 
+# This function will select a random number and then places it on a board without being allowed to place two ships on top of each other
 def pickComputerShips():
     while data['computer_ships']<3:
         col=randint(0,4)
@@ -76,20 +83,22 @@ def pickComputerShips():
             data['computer'][row][col]='ship'
     redrawall()
 
+#This function return True if the user or the computer won and False otherwise.
 def winner():
     computer_winner=TextAsset('Computer Wins!!! :(',fill=black,style='bold 40pt Arial')
-    user_winner=TextAsset('YOU WIN!!!!! XD',fill=black,style='bold 40pt Arial')
+    user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
     if data['computer_ships_sunk']==3:
-        Sprite(user_winner,(500,370))
+        Sprite(user_winner,(400,370))
     else:
         Sprite(computer_winner,(500,370))
     data['Game Over']=True
         
-
+#Creates a 5x5 empty matrix and returns it.
 def buildBoard():
     board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
     return board
 
+#This will store all of the code and will setup the game
 if __name__ == '__main__':
     data={}
     data['player']=buildBoard()
