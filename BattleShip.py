@@ -30,13 +30,12 @@ def redrawall():
     for r in range(0,5):
         for c in range(0,5):
             Sprite(whiteRectangle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
-            if data['computer'][r][c]=='ship':
-                Sprite(greenCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
-            elif data['computer'][r][c]=='hit':
+            if data['computer'][r][c]=='hit':
                 Sprite(redCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
             elif data['computer'][r][c]=='miss':
                 Sprite(blackX,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
-
+    if data['computer_ships_sunk']==3 or data['ships_sunk']==3:
+        winner()
 
 def mouseClick(event):
      print(event.x//75,event.y//75)
@@ -47,6 +46,7 @@ def mouseClick(event):
      else:
         if data['computer'][event.y//75][(event.x-500)//75]=='ship':
             data['computer'][event.y//75][(event.x-500)//75]='hit'
+            data['computer_ships_sunk']+=1
             computerTurn()
 
         elif data['computer'][event.y//75][(event.x-500)//75]=='':
@@ -60,6 +60,7 @@ def computerTurn():
     row=randint(0,4)
     if data['player'][row][col]=='ship':
         data['player'][row][col]='hit'
+        data['ships_sunk']+=1
     elif data['player'][row][col]=='':
         data['player'][row][col]='miss'
     else:
@@ -74,7 +75,13 @@ def pickComputerShips():
             data['computer'][row][col]='ship'
     redrawall()
 
-
+def winner():
+    computer_winner=TextAsset('Computer Wins!!! Better luck next time :(',fill=black,style='bold 40pt Arial')
+    user_winner=TextAsset('YOU WIN!!!!! XD',fill=black,style='bold 40pt Arial')
+    if data['computer_ships_sunk'==3]:
+        Sprite(user_winner,(500,100))
+    else:
+        Sprite(computer_winner,(500,100))
         
 
 def buildBoard():
@@ -85,11 +92,14 @@ if __name__ == '__main__':
     data={}
     data['player']=buildBoard()
     data['computer']=buildBoard()
+    data['ships_sunk']=0
+    data['computer_ships_sunk']=0
     data['ships_placed']=0
     data['computer_ships']=0
     pickComputerShips()    
     App().listenMouseEvent('click',mouseClick)
     App().run()
+    
 
 
 
