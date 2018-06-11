@@ -35,7 +35,8 @@ def redrawall():
             elif data['computer'][r][c]=='miss':
                 Sprite(blackX,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
     if data['computer_ships_sunk']==3 or data['ships_sunk']==3:
-        winner()
+    
+     winner()
 
 def mouseClick(event):
      print(event.x//75,event.y//75)
@@ -52,7 +53,6 @@ def mouseClick(event):
         elif data['computer'][event.y//75][(event.x-500)//75]=='':
              data['computer'][event.y//75][(event.x-500)//75]='miss'
              computerTurn()
-             
      redrawall()
      
 def computerTurn():
