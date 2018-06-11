@@ -47,9 +47,11 @@ def mouseClick(event):
      else:
         if data['computer'][event.y//75][(event.x-500)//75]=='ship':
             data['computer'][event.y//75][(event.x-500)//75]='hit'
-        else:
+            computerTurn()
+
+        elif data['computer'][event.y//75][(event.x-500)//75]=='':
              data['computer'][event.y//75][(event.x-500)//75]='miss'
-        computerTurn()
+             computerTurn()
              
      redrawall()
      
