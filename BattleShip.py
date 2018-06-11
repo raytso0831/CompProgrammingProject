@@ -39,21 +39,22 @@ def redrawall():
      winner()
 
 def mouseClick(event):
-     print(event.x//75,event.y//75)
-     if data['ships_placed']<3:
-         if data['player'][event.y//75][event.x//75]!='ship':
-             data['ships_placed']+=1
-             data['player'][event.y//75][event.x//75]='ship'
-     else:
-        if data['computer'][event.y//75][(event.x-500)//75]=='ship':
-            data['computer'][event.y//75][(event.x-500)//75]='hit'
-            data['computer_ships_sunk']+=1
-            computerTurn()
-
-        elif data['computer'][event.y//75][(event.x-500)//75]=='':
-             data['computer'][event.y//75][(event.x-500)//75]='miss'
-             computerTurn()
-     redrawall()
+    if data['Game Over']==False:
+        print(event.x//75,event.y//75)
+        if data['ships_placed']<3:
+            if data['player'][event.y//75][event.x//75]!='ship':
+                data['ships_placed']+=1
+                data['player'][event.y//75][event.x//75]='ship'
+        else:
+            if data['computer'][event.y//75][(event.x-500)//75]=='ship':
+                data['computer'][event.y//75][(event.x-500)//75]='hit'
+                data['computer_ships_sunk']+=1
+                computerTurn()
+    
+            elif data['computer'][event.y//75][(event.x-500)//75]=='':
+                 data['computer'][event.y//75][(event.x-500)//75]='miss'
+                 computerTurn()
+        redrawall()
      
 def computerTurn():
     col=randint(0,4)
@@ -78,10 +79,11 @@ def pickComputerShips():
 def winner():
     computer_winner=TextAsset('Computer Wins!!! Better luck next time :(',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!! XD',fill=black,style='bold 40pt Arial')
-    if data['computer_ships_sunk'==3]:
+    if data['computer_ships_sunk']==3:
         Sprite(user_winner,(500,100))
     else:
         Sprite(computer_winner,(500,100))
+    data['Game Over']=True
         
 
 def buildBoard():
@@ -96,62 +98,33 @@ if __name__ == '__main__':
     data['computer_ships_sunk']=0
     data['ships_placed']=0
     data['computer_ships']=0
+    data['Game Over']=False
     pickComputerShips()    
     App().listenMouseEvent('click',mouseClick)
     App().run()
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-from ggame import *
- #graphics
-white=Color(0xFFFFFF,1)
-black=Color(0x000000,1)
     
 
-blackOutline=LineStyle(1, black)
-whiteRectangle=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle2=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle3=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle4=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle5=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle6=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle7=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle8=RectangleAsset(75,75,blackOutline,white) 
-whiteRectangle9=RectangleAsset(75,75,blackOutline,white) 
-    
-Sprite(whiteRectangle,(0,0))
-Sprite(whiteRectangle2,(75,0))
-Sprite(whiteRectangle3,(150,0))
-Sprite(whiteRectangle4,(225,0))
-Sprite(whiteRectangle5,(300,0))
-Sprite(whiteRectangle6,(300,150))
-Sprite(whiteRectangle7,(0,300))
-Sprite(whiteRectangle8,(150,300))
-Sprite(whiteRectangle9,(300,300))
-    
-    
-App().run()
-'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
