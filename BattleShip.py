@@ -77,12 +77,12 @@ def pickComputerShips():
     redrawall()
 
 def winner():
-    computer_winner=TextAsset('Computer Wins!!! Better luck next time :(',fill=black,style='bold 40pt Arial')
+    computer_winner=TextAsset('Computer Wins!!! :(',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!! XD',fill=black,style='bold 40pt Arial')
     if data['computer_ships_sunk']==3:
-        Sprite(user_winner,(500,100))
+        Sprite(user_winner,(500,370))
     else:
-        Sprite(computer_winner,(500,100))
+        Sprite(computer_winner,(500,370))
     data['Game Over']=True
         
 
