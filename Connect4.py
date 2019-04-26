@@ -7,7 +7,7 @@ from ggame import *
 
 def redrawall():
 
-    RADIUS=35
+    RADIUS=33
     red=Color(0xFF0000,1)
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
