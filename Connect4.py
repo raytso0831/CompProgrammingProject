@@ -12,7 +12,7 @@ def redrawall():
     white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
     yellow=Color(0xFFF033,1)
-    blue= Color(0x3633FF,1)
+    blue= Color(0x33E0FF,1)
     
     blackOutline=LineStyle(1, black)
     blueOutline=LineStyle(1, blue)
