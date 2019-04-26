@@ -9,7 +9,6 @@ def redrawall():
 
     RADIUS=33
     red=Color(0xFF0000,1)
-    white=Color(0xFFFFFF,1)
     black=Color(0x000000,1)
     yellow=Color(0xFFF033,1)
     blue= Color(0x3633FF,1)
@@ -30,4 +29,5 @@ def buildBoard():
 
 if __name__ == '__main__':
     data={}
+    redrawall()
     App().run()
