@@ -6,14 +6,16 @@
 from random import randint
 from ggame import *
 
+red=Color(0xFF0000,1)
+white=Color(0xFFFFFF,1)
+black=Color(0x000000,1)
+green=Color(0x00FC00,1)
+
+
 # This function will draws the player board and computer board.
 def redrawall():
     RADIUS=33
     #graphics for colors
-    red=Color(0xFF0000,1)
-    white=Color(0xFFFFFF,1)
-    black=Color(0x000000,1)
-    green=Color(0x00FC00,1)
     #graphics for the board
     blackOutline=LineStyle(1, black)
     whiteRectangle=RectangleAsset(75,75,blackOutline,white)
@@ -85,7 +87,7 @@ def pickComputerShips():
 
 #This function return True if the user or the computer won and False otherwise.
 def winner():
-    computer_winner=TextAsset('Computer Wins!!! :(',fill=black,style='bold 40pt Arial')
+    computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
     if data['computer_ships_sunk']==3:
         Sprite(user_winner,(400,370))
@@ -97,6 +99,8 @@ def winner():
 def buildBoard():
     board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
     return board
+
+
 
 #This will store all of the code and will setup the game
 if __name__ == '__main__':
