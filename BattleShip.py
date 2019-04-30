@@ -90,9 +90,9 @@ def winner():
     computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
     if data['computer_ships_sunk']==3:
-        Sprite(user_winner,(400,370))
+        Sprite(user_winner,(500,400))
     else:
-        Sprite(computer_winner,(500,370))
+        Sprite(computer_winner,(500,400))
     data['Game Over']=True
         
 #Creates a 5x5 empty matrix and returns it.
