@@ -34,9 +34,10 @@ def mouseClick(event):
     if data['Game Over']==False:
         print(event.x//75)
        
+        # needs work here \/
         if data['board'][event.y//75]!= 'player':
             data['tokens_placed']+=1
-            data[event.x//75]= 'player'
+            data['board'][event.x//75] = 'player'
     redrawall()
 
 def step():
