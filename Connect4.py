@@ -29,26 +29,42 @@ def redrawall():
                     Sprite(yellowCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
 
 def mouseClick(event):
+    y=5
+    x = int(event.x)
     data['click'] = True
     data['clicktime'] = time()
     if data['Game Over']==False:
-        print(event.x//75)
-       
-        # needs work here \/
-        if data['board'][event.y//75]!= 'player':
-            data['tokens_placed']+=1
-            data['board'][event.x//75] = 'player'
+        print(x//75)
+        if data['board'][0][x//75] == '':
+            while data['board'][y][x//75]!='':
+                y=y-1
+            #data['player'][event.y//75][event.x//75]='ship'
+            data['board'][y][x//75]='player'
     redrawall()
 
+def computer_put_token():
+    col=randint(0,6)
+    x = int(event.x)
+    data['click'] = True
+    data['clicktime'] = time()
+    if data['Game Over']==False:
+        print(x//75)
+        if data['board'][0][x//75] == '':
+            while data['board'][y][x//75]!='':
+                col=col-1
+            #data['player'][event.y//75][event.x//75]='ship'
+            data['board'][y][x//75]='computer'
+    
+    
 def step():
-    delay = 4
+    delay = 2
     if data['click'] and time() > data['clicktime'] + delay:
         print("CLICK")
         data['click'] = False
 
     
 def buildBoard():
-    board=[['','','','','','player','computer'],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','','']]
+    board=[['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','player','computer']]
     return board
 
 
