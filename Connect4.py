@@ -1,83 +1,121 @@
 #Ray Tso
-#4/26/19
-#Connect4.py
+#5/23/18
+#battleship.py
 
+#These are imports used.
 from random import randint
-from time import time
 from ggame import *
 
-RADIUS=33
 red=Color(0xFF0000,1)
 white=Color(0xFFFFFF,1)
 black=Color(0x000000,1)
-yellow=Color(0xFFF033,1)
-blue= Color(0x33E0FF,1)
-blackOutline=LineStyle(1, black)
-blueOutline=LineStyle(1, blue)
-blueRectangle=RectangleAsset(75,75,blueOutline,white)
-redCircle=CircleAsset(35,blackOutline,red)
-yellowCircle=CircleAsset(35,blackOutline,yellow)
+green=Color(0x00FC00,1)
 
 
+# This function will draws the player board and computer board.
 def redrawall():
-    for x in range(0,6):
-            for y in range(0,7):
-                Sprite(blueRectangle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
-                if data['board'][x][y]=='player':
-                    Sprite(redCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
-                elif data['board'][x][y]=='computer':
-                    Sprite(yellowCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
+    RADIUS=33
+    #graphics for colors
+    #graphics for the board
+    blackOutline=LineStyle(1, black)
+    whiteRectangle=RectangleAsset(75,75,blackOutline,white)
+    redCircle=CircleAsset(35,blackOutline,red)
+    greenCircle=CircleAsset(35,blackOutline,green)
+    blackX=TextAsset('X',fill=black,style='bold 60pt Arial')
+    for r in range(0,5):
+        for c in range(0,5):
+            Sprite(whiteRectangle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            if data['player'][r][c]=='ship':
+                Sprite(greenCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            elif data['player'][r][c]=='hit':
+                Sprite(redCircle,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            elif data['player'][r][c]=='miss':
+                Sprite(blackX,((2*RADIUS+10)*c,(2*RADIUS+10)*r))
+                
+    for r in range(0,5):
+        for c in range(0,5):
+            Sprite(whiteRectangle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            if data['computer'][r][c]=='hit':
+                Sprite(redCircle,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+            elif data['computer'][r][c]=='miss':
+                Sprite(blackX,(500+(2*RADIUS+10)*c,(2*RADIUS+10)*r))
+    if data['computer_ships_sunk']==3 or data['ships_sunk']==3:
+    
+     winner()
+
+#This function should figure out what row and column the user clicked on
 
 def mouseClick(event):
-    y=5
-    x = int(event.x)
-    data['click'] = True
-    data['clicktime'] = time()
     if data['Game Over']==False:
-        print(x//75)
-        if data['board'][0][x//75] == '':
-            while data['board'][y][x//75]!='':
-                y=y-1
-            #data['player'][event.y//75][event.x//75]='ship'
-            data['board'][y][x//75]='player'
+        print(event.x//75,event.y//75)
+        if data['ships_placed']<3:
+            if data['player'][event.y//75][event.x//75]!='ship':
+                data['ships_placed']+=1
+                data['player'][event.y//75][event.x//75]='ship'
+        else:
+            if data['computer'][event.y//75][(event.x-500)//75]=='ship':
+                data['computer'][event.y//75][(event.x-500)//75]='hit'
+                data['computer_ships_sunk']+=1
+                computerTurn()
+    
+            elif data['computer'][event.y//75][(event.x-500)//75]=='':
+                 data['computer'][event.y//75][(event.x-500)//75]='miss'
+                 computerTurn()
+        redrawall()
+     
+# The function should have the computer pick a random spot to guess and process the guess if it is a valid move. 
+def computerTurn():
+    col=randint(0,4)
+    row=randint(0,4)
+    if data['player'][row][col]=='ship':
+        data['player'][row][col]='hit'
+        data['ships_sunk']+=1
+    elif data['player'][row][col]=='':
+        data['player'][row][col]='miss'
+    else:
+        computerTurn()
+
+# This function will select a random number and then places it on a board without being allowed to place two ships on top of each other
+def pickComputerShips():
+    while data['computer_ships']<3:
+        col=randint(0,4)
+        row=randint(0,4)
+        if data['computer'][row][col]!='ship':
+            data['computer_ships']+=1
+            data['computer'][row][col]='ship'
     redrawall()
 
-def computer_put_token():
-    col=randint(0,6)
-    x = int(event.x)
-    data['click'] = True
-    data['clicktime'] = time()
-    if data['Game Over']==False:
-        print(x//75)
-        if data['board'][0][x//75] == '':
-            while data['board'][y][x//75]!='':
-                col=col-1
-            #data['player'][event.y//75][event.x//75]='ship'
-            data['board'][y][x//75]='computer'
-    
-    
-def step():
-    delay = 2
-    if data['click'] and time() > data['clicktime'] + delay:
-        print("CLICK")
-        data['click'] = False
-
-    
+#This function return True if the user or the computer won and False otherwise.
+def winner():
+    computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
+    user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
+    if data['computer_ships_sunk']==3:
+        Sprite(user_winner,(500,400))
+    else:
+        Sprite(computer_winner,(500,400))
+    data['Game Over']=True
+        
+#Creates a 5x5 empty matrix and returns it.
 def buildBoard():
-    board=[['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','player','computer']]
+    board=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
     return board
 
 
+
+#This will store all of the code and will setup the game
 if __name__ == '__main__':
     data={}
-    data['board']=buildBoard()
-    data['click']=False
-    redrawall()
-    data['tokens_placed']=0
-    App().run(step)
-    App().listenMouseEvent('click',mouseClick)
+    data['player']=buildBoard()
+    data['computer']=buildBoard()
+    data['ships_sunk']=0
+    data['computer_ships_sunk']=0
+    data['ships_placed']=0
+    data['computer_ships']=0
     data['Game Over']=False
-
+    pickComputerShips()    
+    App().listenMouseEvent('click',mouseClick)
+    App().run()
+    
     
     
     
