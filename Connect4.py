@@ -31,9 +31,9 @@ def redrawall():
 def mouseClick(event):
     y=5
     x = int(event.x)
-    data['click'] = True
-    data['clicktime'] = time()
-    if data['Game Over']==False:
+    if data['Game Over']==False and data['click'] == False:
+        data['click'] = True
+        data['clicktime'] = time()
         print(x//75)
         if data['board'][0][x//75] == '':
             while data['board'][y][x//75]!='':
