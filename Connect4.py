@@ -21,12 +21,12 @@ yellowCircle=CircleAsset(35,blackOutline,yellow)
 
 def redrawall():
     for x in range(0,6):
-            for y in range(0,7):
-                Sprite(blueRectangle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
-                if data['board'][x][y]=='player':
-                    Sprite(redCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
-                elif data['board'][x][y]=='computer':
-                    Sprite(yellowCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
+        for y in range(0,7):
+            Sprite(blueRectangle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
+            if data['board'][x][y]=='player':
+                Sprite(redCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
+            elif data['board'][x][y]=='computer':
+                Sprite(yellowCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
 
 def mouseClick(event):
     y=5
@@ -40,6 +40,7 @@ def mouseClick(event):
                 y=y-1
             #data['player'][event.y//75][event.x//75]='ship'
             data['board'][y][x//75]='player'
+    winner()
     redrawall()
 
 def computer_put_token():
@@ -52,6 +53,7 @@ def computer_put_token():
             while data['board'][y][col]!='':
                 y=y-1
             data['board'][y][col]='computer'
+    winner()
     redrawall()
     
     
@@ -60,6 +62,30 @@ def step():
     if data['click'] and time() > data['clicktime'] + delay:
         computer_put_token()
         data['click'] = False
+        
+def check_row_for_winner():
+    for y in range(7):
+        currplayer = None
+        count = 0
+        for x in range(6):
+            if data['board'][x][y]==currplayer:
+                count += 1
+                if count == 4 and currplayer!='':
+                    return currplayer
+            else:
+                count = 1
+                currplayer = data['board'][x][y]
+    return ''
+    
+def winner():
+    computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
+    user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
+    if check_row_for_winner() == 'player':
+        Sprite(user_winner,(750,750))
+        data['Game Over']=True
+    elif check_row_for_winner() == 'computer':
+        Sprite(computer_winner,(7500,750))
+        data['Game Over']=True
 
     
 def buildBoard():
