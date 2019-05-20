@@ -27,6 +27,9 @@ def redrawall():
                 Sprite(redCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
             elif data['board'][x][y]=='computer':
                 Sprite(yellowCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
+    check_row_for_winner()
+    winner()
+
 
 def mouseClick(event):
     y=5
@@ -40,6 +43,7 @@ def mouseClick(event):
                 y=y-1
             #data['player'][event.y//75][event.x//75]='ship'
             data['board'][y][x//75]='player'
+    check_row_for_winner()        
     winner()
     redrawall()
 
@@ -53,6 +57,7 @@ def computer_put_token():
             while data['board'][y][col]!='':
                 y=y-1
             data['board'][y][col]='computer'
+    check_row_for_winner()
     winner()
     redrawall()
     
@@ -81,10 +86,10 @@ def winner():
     computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
     if check_row_for_winner() == 'player':
-        Sprite(user_winner,(750,750))
+        Sprite(user_winner,(200,200))
         data['Game Over']=True
     elif check_row_for_winner() == 'computer':
-        Sprite(computer_winner,(7500,750))
+        Sprite(computer_winner,(200,200))
         data['Game Over']=True
 
     
