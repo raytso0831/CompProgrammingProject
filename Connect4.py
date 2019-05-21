@@ -69,6 +69,20 @@ def step():
         data['click'] = False
         
 def check_row_for_winner():
+    for y in range(6):
+        currplayer = None
+        count = 0
+        for x in range(7):
+            if data['board'][y][x]==currplayer:
+                count += 1
+                if count == 4 and currplayer!='':
+                    return currplayer
+            else:
+                count = 1
+                currplayer = data['board'][y][x]
+    return ''
+
+def check_col_for_winner():
     for y in range(7):
         currplayer = None
         count = 0
@@ -80,16 +94,15 @@ def check_row_for_winner():
             else:
                 count = 1
                 currplayer = data['board'][x][y]
-    return ''
-    
+    return ''    
 def winner():
     computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
-    if check_row_for_winner() == 'player':
-        Sprite(user_winner,(200,200))
+    if check_row_for_winner() == 'player' or check_col_for_winner()=='player':
+        Sprite(user_winner,(550,200))
         data['Game Over']=True
-    elif check_row_for_winner() == 'computer':
-        Sprite(computer_winner,(200,200))
+    elif check_row_for_winner() == 'computer'or check_col_for_winner()=='computer':
+        Sprite(computer_winner,(550,200))
         data['Game Over']=True
 
     
