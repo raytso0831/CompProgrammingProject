@@ -94,14 +94,34 @@ def check_col_for_winner():
             else:
                 count = 1
                 currplayer = data['board'][x][y]
-    return ''    
+    return ''
+    
+    
+def diagonal():
+    startposition=[(0,3),(0,4),(0,5),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,3),(3,4),(3,5),(4,3),(4,4),(4,5),(5,3),(5,4),(5,5)]
+    for x, y in startposition:
+        currplayer=None
+        while y>= 0 and x<=6:
+            x+=1
+            y-=1
+            if data['board'][y][x]==currplayer:
+                count += 1
+                if count == 4 and currplayer!='':
+                    return currplayer
+            else:
+                count = 1
+                currplayer = data['board'][y][x]
+
+        
+
+
 def winner():
     computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
-    if check_row_for_winner() == 'player' or check_col_for_winner()=='player':
+    if check_row_for_winner() == 'player' or check_col_for_winner()=='player'or diagonal()=='player':
         Sprite(user_winner,(550,200))
         data['Game Over']=True
-    elif check_row_for_winner() == 'computer'or check_col_for_winner()=='computer':
+    elif check_row_for_winner() == 'computer'or check_col_for_winner() or diagonal()=='computer':
         Sprite(computer_winner,(550,200))
         data['Game Over']=True
 
