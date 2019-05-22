@@ -97,12 +97,10 @@ def check_col_for_winner():
     
     
 def diagonal():
-    startposition=[(0,3),(0,4),(0,5),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,3),(3,4),(3,5)]
+    startposition=[(0,3),(0,4),(0,5),(1,5),(2,5),(3,5)]
     for x, y in startposition:
         currplayer=None
         while y>= 1 and x<=5:
-            x+=1
-            y-=1
             if data['board'][y][x]==currplayer:
                 count += 1
                 if count == 4 and currplayer!='':
@@ -110,6 +108,8 @@ def diagonal():
             else:
                 count = 1
                 currplayer = data['board'][y][x]
+            x+=1
+            y-=1
 
         
 
