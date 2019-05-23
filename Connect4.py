@@ -45,10 +45,13 @@ def mouseClick(event):
     check_row_for_winner()        
     winner()
     redrawall()
+    
 
 def computer_put_token():
     y=5
     col=randint(0,6)
+    while data['board'][0][col]!="":
+        col=randint(0,6)
     data['click'] = True
     data['clicktime'] = time()
     if data['Game Over']==False:
@@ -100,7 +103,7 @@ def diagonal_left():
     startposition=[(0,3),(0,4),(0,5),(1,5),(2,5),(3,5)]
     for x, y in startposition:
         currplayer=None
-        while y>= 0 and x<=5:
+        while y>= 0 and x<=6:
             if data['board'][y][x]==currplayer:
                 count += 1
                 if count == 4 and currplayer!='':
@@ -117,7 +120,7 @@ def diagonal_right():
     startposition=[(0,0),(0,1),(0,2),(1,0),(2,0),(3,0)]
     for x, y in startposition:
         currplayer=None
-        while y>= 1 and x<=5:
+        while y<= 5 and x<=6:
             if data['board'][y][x]==currplayer:
                 count += 1
                 if count == 4 and currplayer!='':
@@ -127,10 +130,6 @@ def diagonal_right():
                 currplayer = data['board'][y][x]
             x+=1
             y+=1
-            
-
-        
-
 
 def winner():
     computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
