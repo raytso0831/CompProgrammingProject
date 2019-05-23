@@ -57,10 +57,16 @@ def computer_put_token():
     data['click'] = True
     data['clicktime'] = time()
     if data['Game Over']==False:
-        if data['board'][0][col] == '':
-            while data['board'][y][col]!='':
-                y=y-1
-            data['board'][y][col]='computer'
+        for col in range:
+            if data['board'][0][col]=='':
+                while data['board'][y][col]!='':
+                    y=y-1
+                data['board'][y][col]='computer'
+                if winner()==True:
+                    redrawall()
+                else:
+                    data['board'][0][col]=""
+                    
     check_row_for_winner()
     winner()
     redrawall()
@@ -139,9 +145,13 @@ def winner():
     if check_row_for_winner() == 'player' or check_col_for_winner()=='player'or diagonal_left() or diagonal_right()=='player':
         Sprite(user_winner,(550,200))
         data['Game Over']=True
+        return True
     elif check_row_for_winner() == 'computer'or check_col_for_winner() or diagonal_left() or diagonal_right()== 'computer':
         Sprite(computer_winner,(550,200))
         data['Game Over']=True
+        return True
+    else:
+        return False
 
     
 def buildBoard():
