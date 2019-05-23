@@ -31,6 +31,8 @@ def redrawall():
 
 
 def mouseClick(event):
+    if event.x>= (75*7) or event.y >= (75*6):
+        return
     y=5
     x = int(event.x)
     if data['Game Over']==False and data['click'] == False:
