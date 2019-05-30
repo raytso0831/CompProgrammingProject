@@ -169,10 +169,7 @@ def winner():
         Sprite(computer_winner,(550,200))
         data['Game Over']=True
         return True
-    else:
-        return False
-
-    
+        
 def buildBoard():
     board=[['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','','']]
     return board
