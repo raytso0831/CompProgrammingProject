@@ -48,23 +48,6 @@ def mouseClick(event):
     winner()
     redrawall()
 
-def computer_put_token():
-    y=5
-    col=randint(0,6)
-    while data['board'][0][col]!="":
-        col=randint(0,6)
-    data['click'] = True
-    data['clicktime'] = time()
-    if data['Game Over']==False:
-        if data['board'][0][col] == '':
-            while data['board'][y][col]!='':
-                y=y-1
-            data['board'][y][col]='computer'
-    check_row_for_winner()
-    winner()
-    redrawall()
-    
-    
 
 def computer_put_token():
     data['click'] = True
