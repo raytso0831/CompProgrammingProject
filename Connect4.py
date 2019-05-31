@@ -65,30 +65,33 @@ def computer_put_token():
     redrawall()
     
     
-'''
+
 def computer_put_token():
-    y=5
-    col=randint(0,6)
-    while data['board'][0][col]!="":
-        col=randint(0,6)
     data['click'] = True
     data['clicktime'] = time()
     if data['Game Over']==False:
-        for col in range(6):
+        for col in range(7):
+            y=5
             if data['board'][0][col]=='':
                 while data['board'][y][col]!='':
                     y=y-1
                 data['board'][y][col]='computer'
                 if winner()==True:
-                    redrawall()
+                    break
+                    #redrawall()
                 else:
                     data['board'][y][col]=""
-                    y=y-1
-                data['board'][y][col]='computer'
-                    
-    check_row_for_winner()
-    winner()
-    redrawall()'''
+                #
+        if winner() == False:
+            col=randint(0,6)
+            while data['board'][0][col]!="":
+                col=randint(0,6)
+            y = 5
+            while data['board'][y][col]!='':
+                y=y-1
+            data['board'][y][col]='computer'
+    #winner()
+    redrawall()
     
     
 def step():
@@ -169,6 +172,8 @@ def winner():
         Sprite(computer_winner,(550,200))
         data['Game Over']=True
         return True
+    else:
+        return False
         
 def buildBoard():
     board=[['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','','']]
