@@ -78,7 +78,7 @@ def computer_put_token():
     
     
 def step():
-    delay = 1
+    delay = 1.5
     if data['click'] and time() > data['clicktime'] + delay:
         computer_put_token()
         data['click'] = False
