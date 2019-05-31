@@ -79,9 +79,9 @@ def computer_put_token():
     #winner()
     redrawall()
     
-#This functions delays the computer to make its turn  1.5 second to make seem smarter   
+#This functions delays the computer to make its turn a second to make seem smarter   
 def step():
-    delay = 1.5
+    delay = 1
     if data['click'] and time() > data['clicktime'] + delay:
         computer_put_token()
         data['click'] = False
@@ -155,11 +155,11 @@ def diagonal_right():
 def winner():
     computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
     user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
-    if check_row_for_winner() == 'player' or check_col_for_winner()=='player'or diagonal_left() or diagonal_right()=='player':
+    if check_row_for_winner() == 'player' or check_col_for_winner()=='player'or diagonal_left() == 'player' or diagonal_right()=='player':
         Sprite(user_winner,(550,200))
         data['Game Over']=True
         return True
-    elif check_row_for_winner() == 'computer'or check_col_for_winner() or diagonal_left() or diagonal_right()== 'computer':
+    elif check_row_for_winner() == 'computer'or check_col_for_winner() == 'computer' or diagonal_left() == 'computer' or diagonal_right()== 'computer':
         Sprite(computer_winner,(550,200))
         data['Game Over']=True
         return True
