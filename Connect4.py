@@ -153,8 +153,8 @@ def diagonal_right():
 
 #This function return True if the user or the computer won and False otherwise.
 def winner():
-    computer_winner=TextAsset('Computer Wins!!! ',fill=black,style='bold 40pt Arial')
-    user_winner=TextAsset('YOU WIN!!!!!',fill=black,style='bold 40pt Arial')
+    computer_winner=TextAsset('Computer Wins!!! 😭',fill=black,style='bold 40pt Comic Sans MS')
+    user_winner=TextAsset('YOU WIN!!!!! 😃',fill=black,style='bold 40pt Comic Sans MS')
     if check_row_for_winner() == 'player' or check_col_for_winner()=='player'or diagonal_left() == 'player' or diagonal_right()=='player':
         Sprite(user_winner,(550,200))
         data['Game Over']=True
