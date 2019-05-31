@@ -88,7 +88,7 @@ def step():
 
 
 #This function check the row of the board to see if there is a winner    
-        def check_row_for_winner():
+def check_row_for_winner():
     for y in range(6):
         currplayer = None
         count = 0
