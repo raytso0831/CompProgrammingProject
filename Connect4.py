@@ -7,6 +7,7 @@ from random import randint
 from time import time
 from ggame import *
 
+#graphics
 RADIUS=33
 red=Color(0xFF0000,1)
 white=Color(0xFFFFFF,1)
@@ -28,9 +29,9 @@ def redrawall():
                 Sprite(redCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
             elif data['board'][x][y]=='computer':
                 Sprite(yellowCircle,((2*RADIUS+10)*y,(2*RADIUS+10)*x))
-    check_row_for_winner()
+    
 
-#This function should figure out what column the user clicked on. It also makes sure that the computer is allowed 
+#This function should figure out what column the user clicked on. It also makes sure that the computer is not allowed 
 # to make a move if you clicked outside the board
 def mouseClick(event):
     if event.x>= (75*7) or event.y >= (75*6):
