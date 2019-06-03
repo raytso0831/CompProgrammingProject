@@ -80,9 +80,10 @@ def computer_put_token():
     #winner()
     redrawall()
     
-#This functions delays the computer to make its turn a second to make seem smarter   
+#This functions delays the computer to make its turn to make seem smarter   
 def step():
-    delay = 1
+    y=randint(1,5)
+    delay = y
     if data['click'] and time() > data['clicktime'] + delay:
         computer_put_token()
         data['click'] = False
